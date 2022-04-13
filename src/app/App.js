@@ -17,14 +17,14 @@ export function App(props) {
                     searchTerm={state.searchTerm}
                     dispatch={dispatch}
                 />
-            </section>
+            </section> */}
             <section>
                 <h2>Favorite Recipes</h2>
                 <FavoriteRecipes
                     favoriteRecipes={state.favoriteRecipes}
                     dispatch={dispatch}
                 />
-            </section> */}
+            </section>
             <hr />
             <section>
                 <h2>All Recipes</h2>
