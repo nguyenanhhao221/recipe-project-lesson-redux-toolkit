@@ -23,8 +23,6 @@ export function AllRecipes({ allRecipes, dispatch }) {
                     </FavoriteButton> */}
                 </Recipe>
             ))}
-            <img src="../../img/biscuits.jpg" alt="test"/>
-            <img src="../../img/bulgogi.jpg" alt="test"/>
         </div>
     );
 
