@@ -1,3 +1,4 @@
+// the img link is changes compare with Codecademy version because React cannot use local img so have to upload to somewhere (in this case using imgur)
 const allRecipesData = [
     { id: 0, name: 'Biscuits', img: 'https://i.imgur.com/IdkaaT7.jpeg'},
     { id: 1, name: 'Bulgogi', img: 'https://i.imgur.com/CEmchNd.jpg'},
