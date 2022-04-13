@@ -18,7 +18,7 @@ export const favoriteRecipesReducer = (favoriteRecipes = initialState, action) =
     switch (action.type) {
         case 'favoriteRecipe/addRecipe':
             if (favoriteRecipes.includes(action.payload)) {
-                return favoriteRecipes
+                return favoriteRecipes;
             }
             return [
                 ...favoriteRecipes,
