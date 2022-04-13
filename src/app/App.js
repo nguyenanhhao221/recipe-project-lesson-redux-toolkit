@@ -6,22 +6,22 @@ import { FavoriteRecipes } from '../features/favoriteRecipes/FavoriteRecipes.js'
 
 export function App(props) {
     const { state, dispatch } = props;
-
-    // const visibleAllRecipes = getFilteredRecipes(state.allRecipes, state.searchTerm);
-    // const visibleFavoriteRecipes = getFilteredRecipes(state.favoriteRecipes, state.searchTerm);
+    //get the valid result after user key in the search term in the search box
+    const visibleAllRecipes = getFilteredRecipes(state.allRecipes, state.searchTerm);
+    const visibleFavoriteRecipes = getFilteredRecipes(state.favoriteRecipes, state.searchTerm);
 
     return (
         <main>
-            {/* <section>
+            <section>
                 <SearchTerm
                     searchTerm={state.searchTerm}
                     dispatch={dispatch}
                 />
-            </section> */}
+            </section>
             <section>
                 <h2>Favorite Recipes</h2>
                 <FavoriteRecipes
-                    favoriteRecipes={state.favoriteRecipes}
+                    favoriteRecipes={visibleFavoriteRecipes}
                     dispatch={dispatch}
                 />
             </section>
@@ -29,7 +29,7 @@ export function App(props) {
             <section>
                 <h2>All Recipes</h2>
                 <AllRecipes
-                    allRecipes={state.allRecipes}
+                    allRecipes={visibleAllRecipes}
                     dispatch={dispatch}
                 />
             </section>
@@ -38,7 +38,7 @@ export function App(props) {
 }
 
 /* Utility Helpers */
-
-// function getFilteredRecipes(recipes, searchTerm) {
-//     return recipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()));
-// }
+//return the recipes which includes the user input in the search box
+function getFilteredRecipes(recipes, searchTerm) {
+    return recipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()));
+}

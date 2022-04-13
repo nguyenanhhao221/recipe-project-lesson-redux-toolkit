@@ -5,6 +5,6 @@ import { allRecipesReducer } from '../features/allRecipes/allRecipesSlice.js';
 
 export const store = createStore(combineReducers({
     favoriteRecipes: favoriteRecipesReducer,
-    // searchTerm: searchTermReducer,
+    searchTerm: searchTermReducer,
     allRecipes: allRecipesReducer
 }));
