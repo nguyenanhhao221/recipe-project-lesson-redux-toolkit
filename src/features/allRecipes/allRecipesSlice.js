@@ -1,5 +1,5 @@
 import allRecipesData from "../../data";
-
+import { selectSearchTerm } from "../searchTerm/searchTermSlice";
 
 //load data of recipes
 export const loadData = () => {
