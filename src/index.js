@@ -7,18 +7,11 @@ import { store } from './app/store';
 import { Provider } from "react-redux";
 //Render for React 18
 const root = createRoot(document.getElementById('root'));
-const render = () => {
-    root.render(
-        //Wrap Provider and pass store props
-        <Provider store={store}>
-            <App
-                state={store.getState()}
-                dispatch={store.dispatch}
-            />
-        </Provider>
 
-    )
-}
-
-render();
-store.subscribe(render);
+root.render(
+    // Wrap Provider and pass store props
+    // No need to subscribe the render function because we use Provider and useSelector hook from react-redux to help with re-render
+    <Provider store={store}>
+        <App />
+    </Provider>
+)

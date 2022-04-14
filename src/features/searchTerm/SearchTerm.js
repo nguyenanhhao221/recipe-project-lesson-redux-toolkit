@@ -1,10 +1,16 @@
 import React from "react";
-import { setSearchTerm, clearSearchTerm } from "./searchTermSlice";
+import { setSearchTerm, clearSearchTerm, selectSearchTerm } from "./searchTermSlice";
+import { useDispatch, useSelector } from "react-redux";
 const searchIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/search.svg';
 const clearIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/clear.svg';
 
 
-export function SearchTerm({ searchTerm, dispatch }) {
+export function SearchTerm() {
+    //useDispatch hook
+    const dispatch = useDispatch();
+
+    //useSelector hook
+    const searchTerm = useSelector(selectSearchTerm)
     //onChange event listener will fire this when user type in the search box
     //take the user input and dispatch the setSearchTerm action to the store
     const onSearchTermChangeHandler = e => {
