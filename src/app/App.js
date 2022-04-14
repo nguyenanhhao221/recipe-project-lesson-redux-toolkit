@@ -5,31 +5,25 @@ import { SearchTerm } from '../features/searchTerm/SearchTerm.js';
 import { FavoriteRecipes } from '../features/favoriteRecipes/FavoriteRecipes.js';
 
 export function App(props) {
-    const { state, dispatch } = props;
+    const { dispatch } = props;
     //get the valid result after user key in the search term in the search box
-    const visibleAllRecipes = getFilteredRecipes(state.allRecipes, state.searchTerm);
-    const visibleFavoriteRecipes = getFilteredRecipes(state.favoriteRecipes, state.searchTerm);
-
     return (
         <main>
-            <section>
+            {/* <section>
                 <SearchTerm
-                    searchTerm={state.searchTerm}
                     dispatch={dispatch}
                 />
             </section>
             <section>
                 <h2>Favorite Recipes</h2>
                 <FavoriteRecipes
-                    favoriteRecipes={visibleFavoriteRecipes}
                     dispatch={dispatch}
                 />
             </section>
-            <hr />
+            <hr /> */}
             <section>
                 <h2>All Recipes</h2>
                 <AllRecipes
-                    allRecipes={visibleAllRecipes}
                     dispatch={dispatch}
                 />
             </section>

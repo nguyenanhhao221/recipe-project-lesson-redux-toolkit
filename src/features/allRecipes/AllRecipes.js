@@ -1,11 +1,20 @@
 import React, { useEffect } from "react";
 import Recipe from "../../components/Recipe";
-import { loadData } from "./allRecipesSlice";
+import { loadData, selectFilteredAllRecipes } from "./allRecipesSlice";
 import FavoriteButton from "../../components/FavoriteButton";
 import { addRecipe } from "../favoriteRecipes/favoriteRecipesSlice";
+//import useSelector hook
+import { useSelector } from "react-redux";
+
 
 const favoriteIconURL = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/favorite.svg'
-export function AllRecipes({ allRecipes, dispatch }) {
+export function AllRecipes({ dispatch }) {
+    //useSelector hook
+    //selectFilteredAllRecipes will get the state in the redux store off allRecipes after filter compare with searchTerm
+    //Then the useSelector hook will return that data from selectFilteredAllRecipes and return to the allRecipes variable.
+    //also when we call the useSelector inside AllRecipes component, it will also subscribe the AllRecipes component to re-render if any changes to the allRecipes portion of the store
+    const allRecipes = useSelector(selectFilteredAllRecipes);
+
     //When component first mount, load the data of recipes
     //Then render
     const onFirstRender = () => {
