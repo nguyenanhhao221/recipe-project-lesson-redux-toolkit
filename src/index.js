@@ -9,11 +9,9 @@ import { Provider } from "react-redux";
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-    //  Wrap Provider and pass store props
+    // Wrap Provider and pass store props
     // No need to subscribe the render function because we use Provider and useSelector hook from react-redux to help with re-render
     <Provider store={store}>
-        <App
-            dispatch={store.dispatch}
-        />
+        <App />
     </Provider>
 )

@@ -31,3 +31,6 @@ export const favoriteRecipesReducer = (favoriteRecipes = initialState, action) =
         default: return favoriteRecipes;
     }
 }
+
+//selector
+export const selectFavoriteRecipes = state => state.favoriteRecipes;
