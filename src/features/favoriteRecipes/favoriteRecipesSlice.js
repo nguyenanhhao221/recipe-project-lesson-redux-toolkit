@@ -27,7 +27,7 @@ export const favoriteRecipesReducer = (favoriteRecipes = initialState, action) =
         //remove recipe
         //return the favoriteRecipe state(array) which not contain the recipe in the removeRecipe action
         case 'favoriteRecipe/removeRecipe':
-            return favoriteRecipes.filter(recipe => recipe !== action.payload)
+            return favoriteRecipes.filter(recipe => recipe.id !== action.payload.id)
         default: return favoriteRecipes;
     }
 }
