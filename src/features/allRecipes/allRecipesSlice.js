@@ -17,10 +17,10 @@ export const allRecipesReducer = (allRecipes = initialState, action) => {
             return action.payload;
         //can even use action from favoriteRecipe slice
         //we utilize this to remove the recipe from allRecipe when clicked on favorite button
-        case 'favoriteRecipe/addRecipe':
+        case 'favoriteRecipes/addRecipe':
             return allRecipes.filter(recipe => recipe.id !== action.payload.id);
         //similar to the addRecipe case, we utilize the favoriteRecipe/removeRecipe action to give back that recipe into allRecipes state
-        case 'favoriteRecipe/removeRecipe':
+        case 'favoriteRecipes/removeRecipe':
             return [
                 ...allRecipes,
                 action.payload
@@ -37,23 +37,3 @@ export const selectFilteredAllRecipes = state => {
     const searchTerm = selectSearchTerm(state);
     return allRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
 }
-
-// This code is for testing the selectors only.
-const testState = {
-    allRecipes: allRecipesData,
-    searchTerm: 'ch'
-}
-
-const testSelectAllRecipes = () => {
-    console.log('All Recipes')
-    console.log(selectAllRecipes(testState));
-}
-
-const testSelectFilteredAllRecipes = () => {
-    console.log('\nRecipes filtered by searchTerm')
-    console.log(selectFilteredAllRecipes(testState));
-}
-
-// Uncomment these to test each selector.
-testSelectAllRecipes();
-testSelectFilteredAllRecipes();
